@@ -1,6 +1,6 @@
 # ServersStatusBot
 
-Download the ready bot here: https://github.com/RestoreMonarchy/ServersStatusBot/releases/tag/1.0
+Download the bot here: https://github.com/RestoreMonarchy/ServersStatusBot/releases/tag/1.0
 
 You can download source code to add custom modifications 
 
