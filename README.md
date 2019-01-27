@@ -14,7 +14,7 @@ All players (updated every 6 minutes)
 
 *Now without "Current Players:" and with slots, so Playing 27/48*
 
-##Instructions
+## Instructions
 
 Download dotnet core Runtime. https://dotnet.microsoft.com/download
 Then Open the cmd in the path where you installed the bot. Type cmd bot.dll
