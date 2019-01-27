@@ -20,3 +20,7 @@ Download dotnet core Runtime. https://dotnet.microsoft.com/download
 Then Open the cmd in the path where you installed the bot. Type cmd bot.dll
 
 **Remember to edit settings.json!**
+
+Report me bugs here: https://discord.gg/yBztk3w
+
+This bot was originaly made for Voroid.com
