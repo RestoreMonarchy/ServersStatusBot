@@ -19,7 +19,7 @@ All players (updated every 6 minutes)
 Download dotnet core Runtime. https://dotnet.microsoft.com/download
 Then Open the cmd in the path where you installed the bot. Type cmd bot.dll
 
-**Remember to edit settings.json!**
+**Remember to fill settings.json!**
 
 Report me bugs here: https://discord.gg/yBztk3w
 
