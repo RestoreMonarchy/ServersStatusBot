@@ -30,7 +30,9 @@ namespace RestoreMonarchy.ServersStatusBot.Services
 
             if (serversChannel == null)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Couldn't find channel {configuration.ChannelId}. Stopping the bot...");
+                Console.ResetColor();
                 await client.StopAsync();
                 return;
             }
@@ -89,12 +91,13 @@ namespace RestoreMonarchy.ServersStatusBot.Services
                 List<string> categoryServers = new List<string>();
                 foreach (string category in distinctCategories)
                 {
-                    categoryServers.Add(configuration.CategoryFormat.Replace("<category>", category, StringComparison.OrdinalIgnoreCase) + "\n\n" + string.Join(configuration.SpaceBetweenServers ? "\n\n" :"\n", 
+                    categoryServers.Add(configuration.CategoryFormat.Replace("<category>", category, StringComparison.OrdinalIgnoreCase) + "\n\n" + string.Join(configuration.SpaceBetweenServers ? "\n\n" : "\n",
                         servers.Where(x => x.Key == category).Select(x => x.Value)));
                 }
 
                 serversText = string.Join("\n\n", categoryServers);
-            } else
+            }
+            else
             {
                 serversText = string.Join(configuration.SpaceBetweenServers ? "\n\n" : "\n", servers.Select(x => x.Value));
             }
@@ -103,6 +106,13 @@ namespace RestoreMonarchy.ServersStatusBot.Services
 
             eb.WithDescription(description.Replace("<totalplayers>", totalPlayers.ToString(), StringComparison.OrdinalIgnoreCase)
                 .Replace("<totalmaxplayers>", totalMaxPlayers.ToString(), StringComparison.OrdinalIgnoreCase));
+
+
+            if (!string.IsNullOrEmpty(configuration.Footer))
+                eb.WithFooter(configuration.Footer, configuration.FooterIcon);
+
+            if (configuration.ShowLastRefresh)
+                eb.WithCurrentTimestamp();
 
             return eb.Build();
         }
@@ -130,10 +140,19 @@ namespace RestoreMonarchy.ServersStatusBot.Services
             }
             else
             {
-                userMessage = await serversChannel.SendMessageAsync(embed: GetEmbed());
-            }
-
-            this.serversMessage = userMessage;
+                try
+                {
+                    userMessage = await serversChannel.SendMessageAsync(embed: GetEmbed());
+                } catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Missing permission to send a message. Unloading...");
+                    Console.ResetColor();
+                    await client.StopAsync();
+                    return;
+                }
+                this.serversMessage = userMessage;
+            }            
         }
     }
 }
