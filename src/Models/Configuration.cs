@@ -20,7 +20,7 @@ namespace RestoreMonarchy.ServersStatusBot.Models
 
         public void LoadDefaults()
         {
-            this.Token = "NTIxMzUyMzg1MzczNzk4NDEw.XQuB4w.omLbd5ADyIb_2h3z-X0suJGI0dM";
+            this.Token = "TOKEN";
             this.Icon = "https://i.imgur.com/rpBmHVE.png";
             this.UseCategories = true;
             this.SpaceBetweenServers = true;
