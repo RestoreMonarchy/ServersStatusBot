@@ -5,7 +5,6 @@ namespace RestoreMonarchy.ServersStatusBot.Models
     public class Configuration
     {
         public string Token { get; set; }
-        public string Icon { get; set; }
         public bool UseCategories { get; set; }
         public bool SpaceBetweenServers { get; set; }
         public int RefreshTime { get; set; }
@@ -21,7 +20,6 @@ namespace RestoreMonarchy.ServersStatusBot.Models
         public void LoadDefaults()
         {
             this.Token = "TOKEN";
-            this.Icon = "https://i.imgur.com/rpBmHVE.png";
             this.UseCategories = true;
             this.SpaceBetweenServers = true;
             this.RefreshTime = 5;
