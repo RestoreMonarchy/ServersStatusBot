@@ -19,6 +19,10 @@ namespace RestoreMonarchy.ServersStatusBot.Models
         public string CategoryFormat { get; set; }
         public string ServerFormat { get; set; }
         public List<Server> Servers { get; set; }
+        public string AuthorText { get; set; }
+        public string AuthorUrl { get; set; }
+        public string AuthorIconUrl { get; set; }
+        public bool UseAuthor { get; set; }
 
         public void LoadDefaults()
         {
@@ -38,6 +42,10 @@ namespace RestoreMonarchy.ServersStatusBot.Models
             this.ServerFormat = "**<name>** \n Players: `<players>/<maxplayers>` Map: `<map>` Address: `<address>:<port>`";
             this.Servers = new List<Server>() { new Server("RM1", "Rust in Unturned", "restoremonarchy.com", 27015), new Server("RM2", "Rust in Unturned", "restoremonarchy.com", 27025),
                 new Server("RM3", "Semi-Vanilla", "restoremonarchy.com", 27045), new Server("RM4", "Semi-Vanilla", "restoremonarchy.com", 27055) };
+            AuthorText = string.Empty;
+            AuthorUrl = string.Empty;
+            AuthorUrl = "https://i.imgur.com/rpBmHVE.png";
+            UseAuthor = false;
         }
     }
 }

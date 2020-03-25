@@ -111,6 +111,9 @@ namespace RestoreMonarchy.ServersStatusBot.Services
             if (!string.IsNullOrEmpty(configuration.Footer))
                 eb.WithFooter(configuration.Footer, configuration.FooterIcon);
 
+            if (configuration.UseAuthor)
+                eb.WithAuthor(configuration.AuthorText, configuration.AuthorIconUrl, configuration.AuthorUrl);
+
             if (configuration.ShowLastRefresh)
                 eb.WithCurrentTimestamp();
 
