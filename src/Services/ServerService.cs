@@ -139,14 +139,14 @@ namespace RestoreMonarchy.ServersStatusBot.Services
                 await userMessage.ModifyAsync(x => x.Embed = GetEmbed());
             }
             else
-            {
+            {                
                 try
                 {
                     userMessage = await serversChannel.SendMessageAsync(embed: GetEmbed());
-                } catch
+                } catch (Exception e)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Missing permission to send a message. Unloading...");
+                    Console.WriteLine(e);
                     Console.ResetColor();
                     await client.StopAsync();
                     return;
