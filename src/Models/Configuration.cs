@@ -26,25 +26,25 @@ namespace RestoreMonarchy.ServersStatusBot.Models
 
         public void LoadDefaults()
         {
-            this.Token = "TOKEN";
-            this.UseCategories = true;
-            this.SpaceBetweenServers = true;
-            this.ShowLastRefresh = true;
-            this.RefreshTime = 5;
-            this.ChannelId = 525027082644750347;
-            this.ColorHex = "ffcc00";
-            this.Title = "Restore Monarchy Servers";
-            this.DescriptionTop = "These are our awesome servers, be sure to join them! \n\n **Players Online:** <totalplayers>/<totalmaxplayers>";
-            this.DescriptionBottom = "[Website](https://restoremonarchy.com)  [Documentation](https://docs.restoremonarchy.com) [Discord](https://discord.gg/yBztk3w)";
-            this.CategoryFormat = "__**<category>**__";
-            this.FooterIcon = "https://i.imgur.com/rpBmHVE.png";
-            this.Footer = "Made by RestoreMonarchy.com";
-            this.ServerFormat = "**<name>** \n Players: `<players>/<maxplayers>` Map: `<map>` Address: `<address>:<port>`";
-            this.Servers = new List<Server>() { new Server("RM1", "Rust in Unturned", "restoremonarchy.com", 27015), new Server("RM2", "Rust in Unturned", "restoremonarchy.com", 27025),
+            Token = "TOKEN";
+            UseCategories = true;
+            SpaceBetweenServers = true;
+            ShowLastRefresh = true;
+            RefreshTime = 5;
+            ChannelId = 525027082644750347;
+            ColorHex = "ffcc00";
+            Title = "Restore Monarchy Servers";
+            DescriptionTop = "These are our awesome servers, be sure to join them! \n\n **Players Online:** <totalplayers>/<totalmaxplayers>";
+            DescriptionBottom = "[Website](https://restoremonarchy.com)  [Documentation](https://docs.restoremonarchy.com) [Discord](https://discord.gg/yBztk3w)";
+            CategoryFormat = "__**<category>**__";
+            FooterIcon = "https://i.imgur.com/rpBmHVE.png";
+            Footer = "Made by RestoreMonarchy.com";
+            ServerFormat = "**<name>** \n Players: `<players>/<maxplayers>` Map: `<map>` Address: `<address>:<port>`";
+            Servers = new List<Server>() { new Server("RM1", "Rust in Unturned", "restoremonarchy.com", 27015), new Server("RM2", "Rust in Unturned", "restoremonarchy.com", 27025),
                 new Server("RM3", "Semi-Vanilla", "restoremonarchy.com", 27045), new Server("RM4", "Semi-Vanilla", "restoremonarchy.com", 27055) };
-            AuthorText = string.Empty;
-            AuthorUrl = string.Empty;
-            AuthorUrl = "https://i.imgur.com/rpBmHVE.png";
+            AuthorText = "Text";
+            AuthorUrl = "URL";
+            AuthorIconUrl = "https://i.imgur.com/rpBmHVE.png";
             UseAuthor = false;
         }
     }

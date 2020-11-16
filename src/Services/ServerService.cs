@@ -134,7 +134,7 @@ namespace RestoreMonarchy.ServersStatusBot.Services
 
         private async Task GetMessage()
         {
-            var messages = await serversChannel.GetMessagesAsync(10).FlattenAsync();
+            var messages = await serversChannel.GetMessagesAsync(5).FlattenAsync();
             var userMessage = messages.FirstOrDefault(x => x.Author.Id == client.CurrentUser.Id) as IUserMessage;
 
             if (userMessage != null)
